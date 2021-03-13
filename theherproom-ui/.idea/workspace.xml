@@ -10,9 +10,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4dd9830a-b4c5-44c7-8afe-2a03f76f0913" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../theherproom-api/.gitignore" beforeDir="false" />
-    </list>
+    <list default="true" id="4dd9830a-b4c5-44c7-8afe-2a03f76f0913" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
