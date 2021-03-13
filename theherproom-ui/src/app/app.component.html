@@ -1,0 +1,28 @@
+<ion-app>
+  <ion-menu side="start">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>
+          The Herp Room
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle>
+          <ion-item (click)="openAddHerpModal()" >
+            <ion-icon name="business" slot="start"></ion-icon>
+            <ion-label>Add Herp</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item (click)="logout()" button>
+            <ion-icon name="exit" slot="start"></ion-icon>
+            <ion-label>Log Out</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet main></ion-router-outlet>
+</ion-app>

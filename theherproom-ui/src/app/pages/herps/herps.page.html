@@ -1,0 +1,36 @@
+
+
+<ion-content>
+    <ion-refresher slot="fixed" (ionRefresh)="getHerps($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+  <ion-segment value="all">
+    <ion-segment-button value="all">All Herps</ion-segment-button>
+    <ion-segment-button value="breeders">Breeders</ion-segment-button>
+  </ion-segment>
+  <ion-virtual-scroll [items]="herps" class="herp-item" approxItemHeight="70px">
+      <ion-item-sliding *virtualItem="let herp" #item>
+<!--          <ion-item (click)="moreInfo(herp)">-->
+<!--            <ion-avatar slot="start">-->
+<!--    &lt;!&ndash;          <ion-img [src]="herp.avatar"></ion-img>&ndash;&gt;-->
+<!--            </ion-avatar>-->
+<!--            <ion-label>{{herp.herp.species}}</ion-label>-->
+<!--          </ion-item>-->
+          <ion-item class="list-item" (click)="moreInfo(herp)">
+              <ion-row no-padding>
+                  <!-- col-for img -->
+                  <ion-col col-3>
+                      <img src="" class="avatar-img">
+                  </ion-col>
+                  <!-- col-for-content -->
+                  <ion-col col-8>
+                      <!-- title -->
+                      <h3 class="title">{{herp.nickName? herp.nickName : herp.herp.species}}</h3>
+                      <!-- description -->
+                      <p class="descriptions">{{herp.herp.commonName? herp.herp.commonName : ''}}</p>
+                  </ion-col>
+              </ion-row>
+          </ion-item>
+    </ion-item-sliding>
+  </ion-virtual-scroll>
+</ion-content>

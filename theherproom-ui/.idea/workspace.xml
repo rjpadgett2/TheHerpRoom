@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4dd9830a-b4c5-44c7-8afe-2a03f76f0913" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../theherproom-api/.gitignore" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1lZJxwENgy6NY5rgfOkyA51OieP" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="js.last.introduce.type" value="LET" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app/pages/landing" />
+      <recent name="$PROJECT_DIR$/src/app/pages/herps" />
+      <recent name="$PROJECT_DIR$/src/app/shared" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.Angular CLI Server">
+    <configuration name="Tests (app)" type="JavaScriptTestRunnerKarma">
+      <config-file value="$PROJECT_DIR$/karma.conf.js" />
+      <working-directory value="$PROJECT_DIR$" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="E2E Tests (app)" type="JavaScriptTestRunnerProtractor">
+      <config-file value="$PROJECT_DIR$/e2e/protractor.conf.js" />
+      <node-interpreter value="project" />
+      <protractor-options value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular CLI Server" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4dd9830a-b4c5-44c7-8afe-2a03f76f0913" name="Default Changelist" comment="" />
+      <created>1607798929798</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1607798929798</updated>
+      <workItem from="1607798931494" duration="65661000" />
+      <workItem from="1610900938262" duration="35255000" />
+      <workItem from="1611992466236" duration="22628000" />
+      <workItem from="1613563506080" duration="37237000" />
+      <workItem from="1615031041889" duration="13639000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="721" y="301" key="#com.intellij.ide.util.MemberChooser" timestamp="1612030906934">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="684" y="-877" key="#com.intellij.ide.util.MemberChooser/-2009.-1200.1920.1200/0.0.1792.1120/-89.-1200.1920.1200@-89.-1200.1920.1200" timestamp="1609463871951" />
+    <state x="721" y="301" key="#com.intellij.ide.util.MemberChooser/0.0.1792.1120/-96.-1200.1920.1200@0.0.1792.1120" timestamp="1612030906934" />
+    <state x="93" y="93" width="1606" height="934" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1611228311341">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="11" y="-1100" width="1720" height="1000" key="com.intellij.history.integration.ui.views.FileHistoryDialog/-2009.-1200.1920.1200/0.0.1792.1120/-89.-1200.1920.1200@-89.-1200.1920.1200" timestamp="1610982952021" />
+    <state x="93" y="93" width="1606" height="934" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1792.1120/-96.-1200.1920.1200@0.0.1792.1120" timestamp="1611228311341" />
+    <state x="600" y="-820" key="refactoring.ChangeSignatureDialog" timestamp="1612054259891">
+      <screen x="-89" y="-1200" width="1920" height="1200" />
+    </state>
+    <state x="600" y="-820" key="refactoring.ChangeSignatureDialog/-2009.-1200.1920.1200/0.0.1792.1120/-89.-1200.1920.1200@-89.-1200.1920.1200" timestamp="1612054259891" />
+    <state x="593" y="-820" key="refactoring.ChangeSignatureDialog/0.0.1792.1120/-96.-1200.1920.1200@-96.-1200.1920.1200" timestamp="1609445476977" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/app/app-routing.module.ts</url>
+          <line>3</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Add a New Herp
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="prev()"><ion-icon slot="start" name="arrow-back"></ion-icon> Prev</ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="next()">Next <ion-icon slot="end" name="arrow-forward"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-slides #formSlider>
+
+    <ion-slide>
+      <ion-item>
+        <ion-label class="ion-text-center">Selected Herp</ion-label>
+        <ion-searchbar
+                #search debounce="500"
+                showCancelButton="always"
+                autocomplete="on"
+                (ionChange)="_ionChange($event)"
+        ></ion-searchbar>
+      </ion-item>
+      <ion-item>
+        <ion-label class="ion-padding-end">Selected Item:</ion-label>
+        <ion-input formControlName="herp" type="text" class="ion-text-center ion-padding-top">
+          {{this.selectedHerp.length > 0 ? this.selectedHerp[1] : ''}}
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-list>
+          <ion-list>
+            <ion-item *ngFor="let item of searchResults"
+                      [id]="item[0]"
+                      button="true"
+                      (click)="searchResultSelected(item)">
+              {{item[1]}}
+            </ion-item>
+          </ion-list>
+        </ion-list>
+      </ion-item>
+
+
+    </ion-slide>
+
+
+
+
+    <ion-slide>
+      <form [formGroup]="form" (ngSubmit)="onSubmit(model)">
+        <formly-form [model]="model" [fields]="formContent">
+        </formly-form>
+        <button type="submit" class="btn btn-primary submit-button">Submit</button>
+      </form>
+    </ion-slide>
+  </ion-slides>
+
+</ion-content>

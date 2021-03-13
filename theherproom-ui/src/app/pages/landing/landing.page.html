@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar *ngIf="authService.isAuthenticated()">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>landing</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content *ngIf="!authService.isAuthenticated()">
+  <ion-button color="primary" expand="block" (click)="openModal()">Login</ion-button>
+  <ion-button color="secondary" expand="block" (click)="registerModal()">Registration</ion-button>
+</ion-content>
+
+<ion-content *ngIf="authService.isAuthenticated()">
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="dashboard">
+        <ion-label>Dashboard</ion-label>
+        <ion-icon name="stats"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button tab="herps">
+        <ion-label>All Herps</ion-label>
+        <ion-icon name="list"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button tab="calendar">
+        <ion-label>Calendar</ion-label>
+        <ion-icon name="calendar"></ion-icon>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-content>

@@ -1,0 +1,95 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Ionic Forms</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form [formGroup]="herpForm" (ngSubmit)="submitForm()" novalidate>
+        <div id="search-results">
+            <ion-searchbar
+                #search debounce="500"
+                showCancelButton="always"
+                autocomplete="on"
+                placeholder="Start Typing Here"
+                (ionChange)="searchHerp($event)"
+            ></ion-searchbar>
+            <ion-list>
+                <ion-item *ngFor="let item of searchResults"
+                          [id]="item[0]"
+                          button="true"
+                          id="search-item"
+                          (click)="searchResultSelected(item)">
+                    {{item.name}}
+                </ion-item>
+            </ion-list>
+        </div>
+        <ion-item lines="full">
+            <ion-label class="ion-padding-end">Selected A Herp:</ion-label>
+            <ion-input formControlName="herp" type="text" class="ion-text-center ion-padding-top" [value]="selectedHerp.id" readonly="true"> {{selectedHerp.name}}</ion-input>
+        </ion-item>
+<!--        <app-error-message></app-error-message>-->
+        <div class="error-message ion-padding" *ngIf="isSubmitted && errorControl.herp.errors?.required">
+            <ion-icon name="warning-outline"></ion-icon>
+            <span class="icon-label">Please Select a Speices</span>
+        </div>
+
+
+    <ion-item lines="full">
+        <ion-label position="floating">Length</ion-label>
+        <ion-input formControlName="length" type="number"></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+        <ion-label position="floating">DOB</ion-label>
+        <ion-datetime (ionChange)="getDate($event)" formControlName="dob" [value]="defaultDate"></ion-datetime>
+    </ion-item>
+
+
+    <ion-radio-group formControlName="breeder" value="false">
+        <ion-list-header>
+            <ion-label>Breeder</ion-label>
+        </ion-list-header>
+
+        <ion-item>
+            <ion-label>Yes</ion-label>
+            <ion-radio slot="start" color="primary" value="true"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>No</ion-label>
+            <ion-radio slot="start" color="primary" value="false"></ion-radio>
+        </ion-item>
+    </ion-radio-group>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.breeder.errors?.required">Please Select if this is a Breeder animal or a Pet</span>
+
+
+    <ion-radio-group formControlName="sex">
+        <ion-list-header>
+            <ion-label>Sex</ion-label>
+        </ion-list-header>
+
+        <ion-item>
+            <ion-label>Male</ion-label>
+            <ion-radio slot="start" color="primary" value="male"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Female</ion-label>
+            <ion-radio slot="start" color="primary" value="female"></ion-radio>
+        </ion-item>
+    </ion-radio-group>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.sex.errors?.required">Please Select the sex of the animal</span>
+
+    <ion-item lines="full">
+        <ion-label>Date Acquired</ion-label>
+        <ion-datetime (ionChange)="getDate($event)" formControlName="dateAcquired" [value]="defaultDate"></ion-datetime>
+    </ion-item>
+
+    <ion-row>
+        <ion-col>
+            <ion-button type="submit" color="danger" expand="block">Submit</ion-button>
+        </ion-col>
+    </ion-row>
+    </form>
+</ion-content>
