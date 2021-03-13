@@ -18,7 +18,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {AutocompleteComponent} from "./shared/components/autocomplete/autocomplete.component";
 import {MatAutocompleteModule} from "@angular/material/autocomplete";
 import {ErrorMessageComponent} from "./shared/components/error-message/error-message.component";
-import {BannerNotificationService} from "./services/banner-notification/banner-notification.service";
 
 @NgModule({
   declarations: [
@@ -59,7 +58,6 @@ import {BannerNotificationService} from "./services/banner-notification/banner-n
   providers: [
     StatusBar,
     SplashScreen,
-      BannerNotificationService,
     {provide: RouteReuseStrategy, useClass: IonicRouteStrategy}
   ],
   exports: [
