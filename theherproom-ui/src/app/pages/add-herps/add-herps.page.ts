@@ -1,7 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {HerpsService} from "../../services/herp-service/herps.service";
 import {Router} from "@angular/router";
-import {LoadingController, MenuController, ModalController} from "@ionic/angular";
+import {LoadingController, MenuController, ModalController, ToastController} from "@ionic/angular";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {HerpFormModel} from "../../shared/models/herp-form.model";
 
@@ -29,6 +29,7 @@ export class AddHerpsPage implements OnInit {
   constructor(
       private herpsService: HerpsService,
       private router: Router,
+      private toastController: ToastController,
       private formBuilder: FormBuilder,
       public modalController: ModalController,
       private menuController: MenuController,
@@ -51,6 +52,7 @@ export class AddHerpsPage implements OnInit {
     if(event.detail.value !== '') {
       this.presentLoading();
         this.herpsService.searchAllHerps(event.detail.value, this.type).subscribe(val => {
+          console.log(val);
           this.searchResults = val;
           this.dismiss();
         });
@@ -93,6 +95,11 @@ export class AddHerpsPage implements OnInit {
     })
   }
 
+  async close() {
+    const modal = await this.modalController.getTop();
+    modal.dismiss();
+  }
+
   get errorControl() {
     return this.herpForm.controls;
   }
@@ -103,10 +110,17 @@ export class AddHerpsPage implements OnInit {
     this.search.placeholder = event.name;
   }
 
-  submitForm() {
+  async submitForm() {
     this.isSubmitted = true;
     if (!this.herpForm.valid) {
-      console.log('Please provide all the required values!: ')
+      const toast = await this.toastController.create({
+        color: 'danger',
+        duration: 2000,
+        position: 'top',
+        message: 'Please Address Errors Before you Submit',
+      });
+
+      await toast.present();
       return false;
     } else {
       this.presentLoading();

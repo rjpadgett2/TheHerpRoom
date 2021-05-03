@@ -11,26 +11,9 @@
 }
 
 .error-message {
-  color: #fee;
-  background-color: #c33;
+  color: red;
 }
 
-.error-message-highlighted {
-  background-color: #c33;
-  color: #fff;
-}
-
-.error-message:first-child,
-input:invalid + .error-message,
-input:invalid + label + .error-message {
-  display: block;
-}
-
-.flag-optional {
-  color: #999;
-}
-
-input:invalid,
-input[type="checkbox"]:invalid + label::before {
-  border-color: #f33;
-}
+//ion-item.error-message-highlighted {
+//  --border-color: var(--ion-color-danger, #f1453d);
+//}

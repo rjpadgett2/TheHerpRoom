@@ -9,9 +9,6 @@
 <ion-content>
   <ion-row>
     <ion-col align-self-center>
-      <ion-item *ngIf="errorMessage" class="help-block" no-lines color="danger">
-        <ion-label><strong>Error: </strong>{{errorMessage}}</ion-label>
-      </ion-item>
       <div text-center>
         <h4>Login Form</h4>
       </div>
@@ -20,16 +17,19 @@
           <ion-item>
             <ion-input type="text" placeholder="Username" class="form-control input-text-custom" id="username" name="username" [(ngModel)]="user.username" #username="ngModel" required></ion-input>
           </ion-item>
-          <ion-item *ngIf="f.submitted && !username.valid" class="help-block" no-lines color="danger">
-            <ion-label>An valid username is required.</ion-label>
-          </ion-item>
+          <div class="error-message ion-padding" *ngIf="f.submitted && !username.valid">
+            <ion-icon class="ion-padding-horizontal" name="warning-outline"></ion-icon>
+            <span class="icon-label">An valid username is required.</span>
+          </div>
 
           <ion-item>
             <ion-input type="password" placeholder="Password" class="form-control input-text-custom" id="password" name="password" [(ngModel)]="user.password" #password="ngModel" required></ion-input>
           </ion-item>
-          <ion-item *ngIf="f.submitted && !password.valid" class="help-block" no-lines color="danger">
-            <ion-label>Password is required.</ion-label>
-          </ion-item>
+          <div class="error-message ion-padding" *ngIf="f.submitted && !password.valid">
+            <ion-icon class="ion-padding-horizontal" name="warning-outline"></ion-icon>
+            <span class="icon-label">Password is required.</span>
+          </div>
+
         </div>
 
         <div padding>

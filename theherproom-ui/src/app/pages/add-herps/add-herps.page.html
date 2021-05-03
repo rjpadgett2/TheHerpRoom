@@ -1,6 +1,9 @@
 <ion-header>
     <ion-toolbar>
-        <ion-title>Ionic Forms</ion-title>
+        <ion-title>Add Herp</ion-title>
+        <ion-buttons slot="start">
+            <ion-button (click)="close()">Close</ion-button>
+        </ion-buttons>
     </ion-toolbar>
 </ion-header>
 
@@ -26,11 +29,10 @@
         </div>
         <ion-item lines="full">
             <ion-label class="ion-padding-end">Selected A Herp:</ion-label>
-            <ion-input formControlName="herp" type="text" class="ion-text-center ion-padding-top" [value]="selectedHerp.id" readonly="true"> {{selectedHerp.name}}</ion-input>
-        </ion-item>
-<!--        <app-error-message></app-error-message>-->
+            <ion-input formControlName="herp" type="text" class="ion-text-center ion-padding-top" readonly="true"> {{selectedHerp.name}}</ion-input>
+       </ion-item>
         <div class="error-message ion-padding" *ngIf="isSubmitted && errorControl.herp.errors?.required">
-            <ion-icon name="warning-outline"></ion-icon>
+            <ion-icon class="ion-padding-horizontal" name="warning-outline"></ion-icon>
             <span class="icon-label">Please Select a Speices</span>
         </div>
 
@@ -61,7 +63,10 @@
             <ion-radio slot="start" color="primary" value="false"></ion-radio>
         </ion-item>
     </ion-radio-group>
-    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.breeder.errors?.required">Please Select if this is a Breeder animal or a Pet</span>
+    <div class="error-message ion-padding" *ngIf="isSubmitted && errorControl.breeder.errors?.required">
+        <ion-icon class="ion-padding-horizontal" name="warning-outline"></ion-icon>
+        <span class="icon-label">Please Select if this is a Breeder animal or a Pet</span>
+    </div>
 
 
     <ion-radio-group formControlName="sex">
@@ -79,7 +84,10 @@
             <ion-radio slot="start" color="primary" value="female"></ion-radio>
         </ion-item>
     </ion-radio-group>
-    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.sex.errors?.required">Please Select the sex of the animal</span>
+    <div class="error-message ion-padding" *ngIf="isSubmitted && errorControl.sex.errors?.required">
+        <ion-icon class="ion-padding-horizontal" name="warning-outline"></ion-icon>
+        <span class="icon-label">Please Select the sex of the animal</span>
+    </div>
 
     <ion-item lines="full">
         <ion-label>Date Acquired</ion-label>

@@ -9,9 +9,44 @@
 
 
 
-<ion-content *ngIf="!authService.isAuthenticated()">
-  <ion-button color="primary" expand="block" (click)="openModal()">Login</ion-button>
-  <ion-button color="secondary" expand="block" (click)="registerModal()">Registration</ion-button>
+<ion-content class="unAuth" *ngIf="!authService.isAuthenticated()">
+<!--  <ion-grid>-->
+<!--    <ion-row class="btn-block">-->
+<!--      <ion-col col-6>-->
+<!--        <ion-button color="primary" expand="block" (click)="openModal()">Login</ion-button>-->
+<!--      </ion-col>-->
+<!--      <ion-col col-6>-->
+<!--        <ion-button color="secondary" expand="block" (click)="registerModal()">Registration</ion-button>-->
+<!--      </ion-col>-->
+<!--    </ion-row>-->
+
+<!--  </ion-grid>-->
+  <ion-content class="login" padding>
+
+    <img class="logo" src="../../../assets/icon/firebase-logo.png">
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <ion-list>
+        <ion-item>
+          <ion-label>Username</ion-label>
+          <ion-input type="username" formControlName="username"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Password</ion-label>
+          <ion-input type="password" formControlName="password"></ion-input>
+        </ion-item>
+      </ion-list>
+
+      <ion-row class="btn-block">
+        <ion-col col-6>
+          <p class="reg" (click)="registration();">REGISTER HERE</p>
+        </ion-col>
+        <ion-col col-6>
+          <button ion-button full type="submit">Login</button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-content>
 </ion-content>
 
 <ion-content *ngIf="authService.isAuthenticated()">

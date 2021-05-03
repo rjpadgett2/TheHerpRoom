@@ -18,6 +18,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {AutocompleteComponent} from "./shared/components/autocomplete/autocomplete.component";
 import {MatAutocompleteModule} from "@angular/material/autocomplete";
 import {ErrorMessageComponent} from "./shared/components/error-message/error-message.component";
+import {UsernameValidatorComponent} from "./shared/validators/username-validator/username-validator.component";
+import {PasswordValidatorComponent} from "./shared/validators/password-validator/password-validator.component";
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import {ErrorMessageComponent} from "./shared/components/error-message/error-mes
     ProgressBarComponent,
     MultiStepFormComponent,
     StepperComponent,
+    UsernameValidatorComponent,
+      PasswordValidatorComponent,
     AutocompleteComponent,
       ErrorMessageComponent
   ],
@@ -58,12 +62,15 @@ import {ErrorMessageComponent} from "./shared/components/error-message/error-mes
   providers: [
     StatusBar,
     SplashScreen,
+      ErrorMessageComponent,
     {provide: RouteReuseStrategy, useClass: IonicRouteStrategy}
   ],
   exports: [
     MultiStepFormComponent,
     AutocompleteComponent,
-    ErrorMessageComponent
+      PasswordValidatorComponent,
+    ErrorMessageComponent,
+    UsernameValidatorComponent
   ],
   bootstrap: [AppComponent]
 })
