@@ -28,6 +28,7 @@
 /Users/reggiepadgett/Desktop/git/Projects/theherproom/theherproom-api/src/main/java/api/herproom/api/security/services/UserDetailsImpl.java
 /Users/reggiepadgett/Desktop/git/Projects/theherproom/theherproom-api/src/main/java/api/herproom/api/security/jwt/AuthTokenFilter.java
 /Users/reggiepadgett/Desktop/git/Projects/theherproom/theherproom-api/src/main/java/api/herproom/api/payload/request/LoginRequest.java
+/Users/reggiepadgett/Desktop/git/Projects/theherproom/theherproom-api/src/main/java/api/herproom/api/config/Config.java
 /Users/reggiepadgett/Desktop/git/Projects/theherproom/theherproom-api/src/main/java/api/herproom/api/payload/response/UserHerpResponse.java
 /Users/reggiepadgett/Desktop/git/Projects/theherproom/theherproom-api/src/main/java/api/herproom/api/repository/HerpRepository.java
 /Users/reggiepadgett/Desktop/git/Projects/theherproom/theherproom-api/src/main/java/api/herproom/api/models/UserHerps.java

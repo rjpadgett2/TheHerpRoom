@@ -1,5 +1,6 @@
 package api.herproom.api.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
@@ -7,8 +8,8 @@ import java.io.Serializable;
 import java.util.Set;
 
 @Entity
-@Table(name = "feeders")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+@Table(name = "feeders")
 public class Feeders implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -17,22 +18,20 @@ public class Feeders implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToMany(mappedBy = "feeders", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Set<HerpFeeders> herpFeeders;
 
     private String species;
 
     private String commonName;
+    @JsonIgnore
+    private Float weight;
 
-    private float weight;
+    private Float crudeProtein;
 
-    private float crudeProtein;
+    private Float crudeFat;
 
-    private float crudeFat;
+    private Float ash;
 
-    private float ash;
-
-    private float length;
+    private Float energy;
 
     public Long getId() {
         return id;
@@ -41,14 +40,6 @@ public class Feeders implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
-
-//    public HerpFeeders getHerpFeeders() {
-//        return herpFeeders;
-//    }
-//
-//    public void setHerpFeeders(HerpFeeders herpFeeders) {
-//        this.herpFeeders = herpFeeders;
-//    }
 
 
     public String getSpecies() {
@@ -71,7 +62,7 @@ public class Feeders implements Serializable {
         return weight;
     }
 
-    public void setWeight(float weight) {
+    public void setWeight(Float weight) {
         this.weight = weight;
     }
 
@@ -79,7 +70,7 @@ public class Feeders implements Serializable {
         return crudeProtein;
     }
 
-    public void setCrudeProtein(float crudeProtein) {
+    public void setCrudeProtein(Float crudeProtein) {
         this.crudeProtein = crudeProtein;
     }
 
@@ -87,7 +78,7 @@ public class Feeders implements Serializable {
         return crudeFat;
     }
 
-    public void setCrudeFat(float crudeFat) {
+    public void setCrudeFat(Float crudeFat) {
         this.crudeFat = crudeFat;
     }
 
@@ -95,15 +86,15 @@ public class Feeders implements Serializable {
         return ash;
     }
 
-    public void setAsh(float ash) {
+    public void setAsh(Float ash) {
         this.ash = ash;
     }
 
-    public float getLength() {
-        return length;
+    public float getEnergy() {
+        return energy;
     }
 
-    public void setLength(float length) {
-        this.length = length;
+    public void setEnergy(Float length) {
+        this.energy = energy;
     }
 }

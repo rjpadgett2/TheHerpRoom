@@ -37,7 +37,6 @@ public class Herp implements Serializable {
 
     public Herp() {}
 
-
     public Long getId() {
         return id;
     }

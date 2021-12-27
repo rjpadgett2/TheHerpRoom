@@ -18,6 +18,7 @@ api/herproom/api/controllers/TestController.class
 api/herproom/api/models/Feeders.class
 api/herproom/api/security/jwt/AuthEntryPointJwt.class
 api/herproom/api/repository/UserHerpRepository.class
+api/herproom/api/config/Config.class
 api/herproom/api/payload/request/SignupRequest.class
 api/herproom/api/payload/response/UserHerpResponse.class
 api/herproom/api/models/enums/HerpSearchCategories.class
