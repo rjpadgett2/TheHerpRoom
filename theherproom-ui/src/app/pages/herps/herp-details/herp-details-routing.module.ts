@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: HerpDetailsPage
+  },
+  {
+    path: 'feeders',
+    loadChildren: () => import('./feeders/feeders.module').then(m => m.FeedersPageModule)
   }
 ];
 

@@ -5,6 +5,7 @@ export interface HerpFeeders {
     weight: number;
     length: number;
     commonName: string;
-    feeders: Feeders[];
+    createdDate: Date;
+    feeder: Feeders;
     
 }

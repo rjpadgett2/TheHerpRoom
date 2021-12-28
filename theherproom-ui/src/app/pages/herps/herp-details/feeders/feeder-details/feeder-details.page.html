@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{feeder.feeder.commonName}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismissModal()">Close</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+
+<!--    <img src="../../assets/hotel.jpeg" alt="ion">-->
+    <ion-card-header>
+      <ion-card-title class="ion-text-center">{{feeder.feeder.commonName}}</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card>
+    <ion-item class="ion-activated">
+      <ion-label>Scientific Name: </ion-label>
+      <ion-item>{{feeder.feeder.species}}</ion-item>
+    </ion-item>
+
+    <ion-item class="ion-activated">
+      <ion-label>Weight: </ion-label>
+      <ion-item>{{feeder.weight ? feeder.weight : feeder.feeder.weight}}</ion-item>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Length: </ion-label>
+      <ion-item>{{feeder.length ? feeder.length : feeder.feeder.length}}</ion-item>
+    </ion-item>
+
+    <ion-item class="ion-activated">
+      <ion-label>Date Created: </ion-label>
+      <ion-item>{{feeder.createdDate | date :  "short"}}</ion-item>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Crude Fat: </ion-label>
+      <ion-item>{{feeder.feeder.crudeFat}}</ion-item>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Crude Protein: </ion-label>
+      <ion-item>{{feeder.feeder.crudeProtein}}</ion-item>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Energy: </ion-label>
+      <ion-item>{{feeder.feeder.energy}}</ion-item>
+    </ion-item>
+  </ion-card>
+</ion-content>

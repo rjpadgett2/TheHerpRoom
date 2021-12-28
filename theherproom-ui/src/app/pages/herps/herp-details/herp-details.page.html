@@ -62,23 +62,6 @@
             <ion-datetime formControlName="dob" id="dob-field" *ngIf="!isReadOnly" min="1989-06-04" max="2004-08-23" [value]="loadedHerp.dob ? (loadedHerp.dob | date: 'MM/dd/yyyy') :  'N/A'" displayFormat="MM/DD/YYYY"></ion-datetime>
         </ion-item>
 
-        <ion-item>
-            <ion-icon name="resize-outline" slot="start"></ion-icon>
-            <ion-label class="my-label">Latest Length:</ion-label>
-            <ion-input formControlName="length" id="length-field" [readonly]="isReadOnly" [color]="isReadOnly ? 'secondary' : 'warning'" [value]="loadedHerp.length ? loadedHerp.length : 'N/A'"></ion-input>
-        </ion-item>
-
-        <ion-item>
-            <ion-icon name="barbell-outline" slot=start></ion-icon>
-            <ion-label class="my-label">Latest Weight:</ion-label>
-            <ion-input formControlName="weight" id="weight-field" [readonly]="isReadOnly" [color]="isReadOnly ? 'secondary' : 'warning'" [value]="loadedHerp.weight ? loadedHerp.weight : 'N/A'"></ion-input>
-        </ion-item>
-
-        <ion-item>
-            <ion-icon name="restaurant-outline" slot="start"></ion-icon>
-            <ion-label class="my-label">Last Meal:</ion-label>
-            <ion-input formControlName="feeder" id="feeders-field" [readonly]="isReadOnly" [color]="isReadOnly ? 'secondary' : 'warning'" [value]="loadedHerp.feeders ? loadedHerp.feeders : 'N/A'"></ion-input>
-        </ion-item>
         <section>
             <ion-button *ngIf="!isReadOnly" slot="start" color="danger" expand="full" (click)="cancel()">Cancel</ion-button>
             <ion-button *ngIf="!isReadOnly" type="submit" slot="end" color="success" expand="full">Save</ion-button>
@@ -108,12 +91,18 @@
     <ion-row>
         <ion-col>
             <ion-card>
-                <ion-card-header>
-                    Doughnut Chart
+                <ion-card-header class="ion-text-center">
+                    Diet(%)
                 </ion-card-header>
+
                 <ion-card-content>
-                    <canvas #doughnutCanvas></canvas>
+                    <canvas #feederDoughnutCanvas></canvas>
                 </ion-card-content>
+                <div class="ion-text-center">
+                    <div class="ion-margin-top ion-margin-bottom">
+                        <ion-button (click)="viewAllFeeders()">View All Feeders</ion-button>
+                    </div>
+                </div>
             </ion-card>
         </ion-col>
     </ion-row>
@@ -121,24 +110,93 @@
         <ion-col>
             <ion-card>
                 <ion-card-header>
-                    Line Chart
+                    Herp Lengths Over time
                 </ion-card-header>
                 <ion-card-content>
-                    <canvas #lineCanvas></canvas>
+                    <canvas *ngIf="!isEditLengths" #lengthLineCanvas></canvas>
+                    <div *ngIf="isEditLengths">
+                        <div class="root-container">
+                            <ion-virtual-scroll [items]="herpLengths" approxItemHeight="10px">
+                                <ion-item-sliding *virtualItem="let length" #item class="list-item">
+                                    <ion-item >
+                                        <div>
+                                            <ion-label>{{length.length}}</ion-label>
+                                            <ion-label><strong>Date:</strong> {{length.date | date}}</ion-label>
+                                        </div>
+                                    </ion-item>
+
+                                    <ion-item-options side="end">
+                                        <ion-item-option color="danger">
+                                            <ion-icon slot="icon-only" name="trash" (click)="deleteHerpFeeders(length.id)"></ion-icon>
+                                        </ion-item-option>
+                                        <ion-item-option>
+                                            <ion-icon slot="icon-only" name="document-text-outline" (click)="presentLengthDetailsModal(length)"></ion-icon>
+                                        </ion-item-option>
+                                    </ion-item-options>
+                                </ion-item-sliding>
+                            </ion-virtual-scroll>
+                        </div>
+                        <section>
+                            <ion-button (click)="presentAddLengthModal()" color="success" expand="full">Add Length</ion-button>
+                        </section>
+                    </div>
                 </ion-card-content>
+                <div class="ion-text-center">
+                    <div class="ion-margin-top">
+                        <ion-label>Toggle List and Chart</ion-label>
+                    </div>
+                    <div>
+                        <ion-toggle (ionChange)="viewAllLengths()"></ion-toggle>
+                    </div>
+                </div>
             </ion-card>
         </ion-col>
     </ion-row>
-    <ion-row>
-    <!--   Feeders Section   -->
-<!--      <ion-item-options>-->
-<!--        <ion-item-option color="secondary" (click)="onEdit(herp.id, slidingItem)">-->
-<!--          <ion-icon name="create" slot="icon-only"></ion-icon>-->
-<!--        </ion-item-option>-->
-<!--        <ion-item-option color="danger" (click)="onEdit(herp.id, slidingItem)">-->
-<!--          <ion-icon name="trash" slot="icon-only"></ion-icon>-->
-<!--        </ion-item-option>-->
-<!--      </ion-item-options>-->
-    </ion-row>
+      <ion-row>
+          <ion-col>
+              <ion-card>
+                  <ion-card-header>
+                      Herp Weight Over time
+                  </ion-card-header>
+                  <ion-card-content>
+                      <canvas *ngIf="!isEditWeights" #weightLineCanvas></canvas>
+                      <div *ngIf="isEditWeights">
+                          <div class="root-container">
+                              <ion-virtual-scroll [items]="herpWeights" approxItemHeight="10px">
+                                  <ion-item-sliding *virtualItem="let weight" #item class="list-item">
+                                      <ion-item >
+                                          <div>
+                                              <ion-label>{{weight.weight}}</ion-label>
+                                              <ion-label><strong>Date Fed:</strong> {{weight.date | date}}</ion-label>
+                                          </div>
+                                      </ion-item>
+
+                                      <ion-item-options side="end">
+                                          <ion-item-option color="danger">
+                                              <ion-icon slot="icon-only" name="trash" (click)="deleteHerpFeeders(weight.id)"></ion-icon>
+                                          </ion-item-option>
+                                          <ion-item-option>
+                                              <ion-icon slot="icon-only" name="document-text-outline" (click)="presentWeightDetailsModal(weight)"></ion-icon>
+                                          </ion-item-option>
+                                      </ion-item-options>
+                                  </ion-item-sliding>
+                              </ion-virtual-scroll>
+                          </div>
+                          <section>
+                              <ion-button (click)="presentAddWeightModal()" color="success" expand="full">Add Food Item</ion-button>
+                          </section>
+                      </div>
+                  </ion-card-content>
+                  <div class="ion-text-center">
+                      <div class="ion-margin-top">
+                          <ion-label>Toggle List and Chart</ion-label>
+                      </div>
+                      <div>
+                          <ion-toggle (ionChange)="viewAllWeights()"></ion-toggle>
+                      </div>
+                  </div>
+              </ion-card>
+          </ion-col>
+      </ion-row>
   </ion-grid>
 </ion-content>

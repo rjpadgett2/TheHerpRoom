@@ -25,3 +25,11 @@ page-chart {
 .ionic-card {
   background-color: white; // black
 }
+
+.root-container {
+  display:block;
+  width:100%;
+  height:200px;
+  overflow:scroll;
+}
+

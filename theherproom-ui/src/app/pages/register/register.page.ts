@@ -66,6 +66,8 @@ export class RegisterPage implements OnInit {
 
   async register(){
     this.isSubmitted = true;
+    let error: string = "";
+
     if(this.registrationForm.valid){
       this.presentLoading();
       let user: User = new User();
@@ -77,10 +79,19 @@ export class RegisterPage implements OnInit {
       this.authService.register(user).subscribe(async data=> {
         this.dismiss();
         this.router.navigate(['/landing/tabs/herps']);
-      },err => {
-        this.errorMessage = "Username already exist";
+      },async err => {
+        error = err.error.message;
+        const toastError = await this.toastController.create({
+          color: 'danger',
+          duration: 2000,
+          position: 'top',
+          message: error,
+        });
         this.dismiss();
+        await toastError.present();
       });
+
+      return false;
     }else{
       const toast = await this.toastController.create({
         color: 'danger',

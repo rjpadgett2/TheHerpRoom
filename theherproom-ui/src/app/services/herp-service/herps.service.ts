@@ -5,6 +5,9 @@ import {UserHerps} from "../../shared/models/user-herps.model";
 import {User} from "../../shared/models/user.model";
 import {Observable} from "rxjs";
 import {HerpFormModel} from "../../shared/models/herp-form.model";
+import {Feeders} from "../../shared/models/feeders.model";
+import {Length} from "../../shared/models/herp-length.model";
+import {Weight} from "../../shared/models/herp-weight.model";
 
 const API_URL = "http://localhost:9090/api/";
 let httpOptions = {
@@ -68,5 +71,79 @@ export class HerpsService {
         });
   }
 
+  getAllHerpFeeders(userHerpId: string): Observable<any> {
+      return this.http.get(API_URL + "userHerp/herpFeeders/" + userHerpId,
+          {
+              headers: {'Authorization': `Bearer ${localStorage.getItem('token')}`}
+          });
+  }
 
+    postHerpFeeders(feeder: Feeders, userHerpId: string): Observable<any> {
+        return this.http.post(API_URL + "userHerp/herpFeeders/" + userHerpId, JSON.stringify(feeder),
+            {
+                headers: {'Authorization': `Bearer ${localStorage.getItem('token')}`,
+                    "Content-type": "application/json; charset=UTF-8"}
+            });
+    }
+
+  getAllFeeders(): Observable<any> {
+      return this.http.get(API_URL + "userHerp/feeders",
+          {
+              headers: {'Authorization': `Bearer ${localStorage.getItem('token')}`}
+          });
+  }
+
+    deleteHerpFeeders(userHerpsId: string, herpFeederId: string): Observable<any>{
+        return this.http.delete<any>(API_URL + "userHerp/herpFeeders/" + herpFeederId + '/' + userHerpsId,
+            {
+                headers: {'Authorization': `Bearer ${localStorage.getItem('token')}`}
+            });
+    }
+
+  getHerpLengths(userHerpsId: string): Observable<any> {
+      return this.http.get(API_URL + "userHerp/herpLength/" + userHerpsId,
+          {
+              headers: {'Authorization': `Bearer ${localStorage.getItem('token')}`}
+          });
+  }
+
+    postHerpLengths(length: Length, userHerpId: string): Observable<any> {
+        return this.http.post(API_URL + "userHerp/herpLength/" + userHerpId, JSON.stringify(length),
+            {
+                headers: {'Authorization': `Bearer ${localStorage.getItem('token')}`,
+                    "Content-type": "application/json; charset=UTF-8"}
+            });
+    }
+
+    deleteHerpLengths(userHerpsId: string, herpLengthId: string): Observable<any>{
+        return this.http.delete<any>(API_URL + "userHerp/herpLength/" + herpLengthId + '/' + userHerpsId,
+            {
+                headers: {'Authorization': `Bearer ${localStorage.getItem('token')}`}
+            });
+    }
+
+    getHerpWeights(userHerpsId: string): Observable<any> {
+        return this.http.get(API_URL + "userHerp/herpWeight/" + userHerpsId,
+            {
+                headers: {'Authorization': `Bearer ${localStorage.getItem('token')}`}
+            });
+    }
+
+    postHerpWeights(weight: Weight, userHerpId: string): Observable<any> {
+        return this.http.post(API_URL + "userHerp/herpFeeders/" + userHerpId, JSON.stringify(weight),
+            {
+                headers: {'Authorization': `Bearer ${localStorage.getItem('token')}`,
+                    "Content-type": "application/json; charset=UTF-8"}
+            });
+    }
+
+    deleteHerpWeights(userHerpsId: string, herpWeightId: string): Observable<any>{
+        return this.http.delete<any>(API_URL + "userHerp/herpWeight/" + herpWeightId + '/' + userHerpsId,
+            {
+                headers: {'Authorization': `Bearer ${localStorage.getItem('token')}`}
+            });
+    }
 }
+
+
+

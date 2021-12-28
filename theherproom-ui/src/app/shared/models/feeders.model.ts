@@ -7,5 +7,6 @@ export interface Feeders {
     crudeFat: number;
     ash: number;
     length: number;
+    energy: number;
 
 }

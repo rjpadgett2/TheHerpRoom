@@ -1,9 +1,11 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {HerpsService} from "../../services/herp-service/herps.service";
 import {Router} from "@angular/router";
-import {LoadingController, MenuController, ModalController, ToastController} from "@ionic/angular";
+import {LoadingController, MenuController, ModalController, ToastController, PickerController} from "@ionic/angular";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {HerpFormModel} from "../../shared/models/herp-form.model";
+import { PickerOptions } from "@ionic/core";
+
 
 
 @Component({
@@ -23,6 +25,15 @@ export class AddHerpsPage implements OnInit {
   public searchResults: Object = [];
   type = 'scientificName';
   public selectedHerp = [];
+  selectedMetric: string = "cm";
+  //todo - store in DB
+  metrics: string[] = [
+      "cm",
+      "m",
+      "in",
+      "ft"
+  ];
+
 
 
 
@@ -33,7 +44,8 @@ export class AddHerpsPage implements OnInit {
       private formBuilder: FormBuilder,
       public modalController: ModalController,
       private menuController: MenuController,
-      private loadingCtrl: LoadingController
+      private loadingCtrl: LoadingController,
+      private pickerController: PickerController
   ) { }
 
 
@@ -47,6 +59,41 @@ export class AddHerpsPage implements OnInit {
       dateAcquired: [this.defaultDate]
     })
   }
+
+  async showPicker() {
+    let options: PickerOptions = {
+      buttons: [
+        {
+          text: "Cancel",
+          role: 'cancel'
+        },
+        {
+          text:'Ok',
+          handler:(value:any) => {
+            this.selectedMetric = value.Metrics.value;
+          console.log(this.selectedMetric);
+        }
+    }
+  ],
+      columns:[{
+        name:'Metrics',
+        options:this.getColumnOptions()
+      }]
+  };
+    let picker = await this.pickerController.create(options);
+    picker.present()
+  }
+
+  getColumnOptions(){
+    let options = [];
+    this.metrics.forEach(x => {
+      options.push({text:x,value:x});
+    });
+    return options;
+  }
+
+
+
 
   searchHerp(event){
     if(event.detail.value !== '') {
@@ -105,12 +152,40 @@ export class AddHerpsPage implements OnInit {
   }
 
   searchResultSelected(event){
+    console.log(event);
     this.selectedHerp = event;
+    this.herpForm.controls['herp'].setValue(event.id);
     this.searchResults = [];
     this.search.placeholder = event.name;
   }
 
+  convertMetrics() {
+    let length = this.herpForm.getRawValue().length;
+    const inConst: number = 2.54;
+    const ftConst: number = 30.48;
+    const mConst: number = 100;
+    switch(this.selectedMetric){
+      case 'cm':
+        break;
+      case 'in':
+        length = length * inConst;
+        break;
+      case 'ft':
+        length = length * ftConst;
+        break;
+      case 'm':
+        length = length * mConst;
+        break;
+    }
+
+    this.herpForm.setValue({
+      length: length
+    })
+
+  }
+
   async submitForm() {
+    console.log(this.herpForm);
     this.isSubmitted = true;
     if (!this.herpForm.valid) {
       const toast = await this.toastController.create({
@@ -124,6 +199,7 @@ export class AddHerpsPage implements OnInit {
       return false;
     } else {
       this.presentLoading();
+      this.convertMetrics()
       let newHerp: HerpFormModel = this.herpForm.value;
       this.herpsService.postUserHerp(newHerp).subscribe(async data => {
           this.dismiss();

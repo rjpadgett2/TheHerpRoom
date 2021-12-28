@@ -20,7 +20,9 @@ import {MatAutocompleteModule} from "@angular/material/autocomplete";
 import {ErrorMessageComponent} from "./shared/components/error-message/error-message.component";
 import {UsernameValidatorComponent} from "./shared/validators/username-validator/username-validator.component";
 import {PasswordValidatorComponent} from "./shared/validators/password-validator/password-validator.component";
-
+import { CalendarModule } from 'ion2-calendar';
+import {DatePipe} from "@angular/common";
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +45,7 @@ import {PasswordValidatorComponent} from "./shared/validators/password-validator
     FormsModule,
     FormlyIonicModule,
     FormlyModule,
+    NgxDatatableModule,
     BrowserAnimationsModule,
     FormlyModule.forRoot({
       types: [
@@ -58,10 +61,12 @@ import {PasswordValidatorComponent} from "./shared/validators/password-validator
       ],
     }),
     MatAutocompleteModule,
+    CalendarModule
   ],
   providers: [
     StatusBar,
     SplashScreen,
+      DatePipe,
       ErrorMessageComponent,
     {provide: RouteReuseStrategy, useClass: IonicRouteStrategy}
   ],

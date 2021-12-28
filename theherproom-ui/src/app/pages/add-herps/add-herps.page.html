@@ -9,7 +9,7 @@
 
 <ion-content>
     <form [formGroup]="herpForm" (ngSubmit)="submitForm()" novalidate>
-        <div id="search-results">
+        <div>
             <ion-searchbar
                 #search debounce="500"
                 showCancelButton="always"
@@ -17,15 +17,18 @@
                 placeholder="Start Typing Here"
                 (ionChange)="searchHerp($event)"
             ></ion-searchbar>
-            <ion-list>
-                <ion-item *ngFor="let item of searchResults"
-                          [id]="item[0]"
-                          button="true"
-                          id="search-item"
-                          (click)="searchResultSelected(item)">
-                    {{item.name}}
-                </ion-item>
-            </ion-list>
+            <ion-content id="search-results">
+                <ion-list *ngFor="let item of searchResults">
+                    <ion-item
+                              [id]="item[0]"
+                              button="true"
+                              id="search-item"
+                              (click)="searchResultSelected(item)">
+                        {{item.name}}
+                    </ion-item>
+                </ion-list>
+            </ion-content>
+
         </div>
         <ion-item lines="full">
             <ion-label class="ion-padding-end">Selected A Herp:</ion-label>
@@ -37,10 +40,21 @@
         </div>
 
 
-    <ion-item lines="full">
-        <ion-label position="floating">Length</ion-label>
-        <ion-input formControlName="length" type="number"></ion-input>
-    </ion-item>
+        <ion-list lines="inset" id="length-field">
+            <ion-item >
+                <ion-label position="floating">Length</ion-label>
+                <ion-input formControlName="length" type="number"></ion-input>
+            </ion-item>
+            <div class="ion-padding-top" >
+                <ion-button (click)="showPicker()">{{selectedMetric}}</ion-button>
+            </div>
+        </ion-list>
+
+
+<!--        <ion-item lines="full">-->
+<!--            <ion-label position="floating">Length</ion-label>-->
+<!--            <ion-input formControlName="length" type="number" (click)="showPicker()"></ion-input>-->
+<!--        </ion-item>-->
 
     <ion-item lines="full">
         <ion-label position="floating">DOB</ion-label>

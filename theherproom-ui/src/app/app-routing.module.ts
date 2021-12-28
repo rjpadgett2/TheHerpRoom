@@ -23,6 +23,38 @@ const routes: Routes = [
     path: 'add-herps',
     loadChildren: () => import('./pages/add-herps/add-herps.module').then( m => m.AddHerpsPageModule)
   },
+  {
+    path: 'calendar',
+    loadChildren: () => import('./pages/calendar/calendar.module').then( m => m.CalendarPageModule)
+  },
+  {
+    path: 'add-feeder',
+    loadChildren: () => import('./pages/herps/herp-details/feeders/add-feeder/add-feeder.module').then(m => m.AddFeederPageModule)
+  },
+  {
+    path: 'feeder-details',
+    loadChildren: () => import('./pages/herps/herp-details/feeders/feeder-details/feeder-details.module').then(m => m.FeederDetailsPageModule)
+  },
+  {
+    path: 'length-details',
+    loadChildren: () => import('./pages/length-details/length-details.module').then( m => m.LengthDetailsPageModule)
+  },
+  {
+    path: 'weight-details',
+    loadChildren: () => import('./pages/weight-details/weight-details.module').then( m => m.WeightDetailsPageModule)
+  },
+  {
+    path: 'add-length',
+    loadChildren: () => import('./pages/add-length/add-length.module').then( m => m.AddLengthPageModule)
+  },
+  {
+    path: 'add-weight',
+    loadChildren: () => import('./pages/add-weight/add-weight.module').then( m => m.AddWeightPageModule)
+  },
+  {
+    path: 'feeders',
+    loadChildren: () => import('./pages/herps/herp-details/feeders/feeders.module').then(m => m.FeedersPageModule)
+  },
 ];
 
 @NgModule({

@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add Feeder</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismissModal()">Close</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="form" (ngSubmit)="submitForm()" novalidate>
+    <ion-item>
+      <ion-label>Feeder</ion-label>
+      <ion-select formControlName="feeders" >
+        <ion-select-option [value]="feeder.id" *ngFor="let feeder of feeders" >{{feeder.commonName}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label class="my-label">Date Fed:</ion-label>
+      <ion-datetime formControlName="createdDate" displayFormat="MM/DD/YYYY"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label class="my-label">Length:</ion-label>
+      <ion-input formControlName="customLength"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label class="my-label">Weight:</ion-label>
+      <ion-input formControlName="customWeight"></ion-input>
+    </ion-item>
+
+    <section>
+      <ion-button type="submit" slot="end" color="success" expand="full">Save</ion-button>
+    </section>
+  </form>
+
+</ion-content>

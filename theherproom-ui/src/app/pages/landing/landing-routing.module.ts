@@ -24,9 +24,20 @@ const routes: Routes = [
           },
           {
             path: ':herpId',
-            loadChildren: () => import('../herps/herp-details/herp-details.module').then( m => m.HerpDetailsPageModule)
+           children: [
+             {
+               path : '',
+               loadChildren: () => import('../herps/herp-details/herp-details.module').then( m => m.HerpDetailsPageModule)
+             },
+
+           ]
           }
         ]
+      },
+      {
+        path: 'calendar',
+        canLoad: [AuthGuard],
+        loadChildren: () => import('../calendar/calendar.module').then(m => m.CalendarPageModule)
       }
     ]
   }

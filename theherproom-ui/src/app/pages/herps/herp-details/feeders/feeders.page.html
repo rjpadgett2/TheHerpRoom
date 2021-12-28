@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/landing/tabs/herps"></ion-back-button>
+    </ion-buttons>
+    <ion-title>All Feeders</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="presentAddFeederModal()" color="success" expand="full">
+        <ion-icon name="add-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <div *ngFor="let feeder of feeders">
+    <div class="row header">
+      <div class="col">Utility Company Name</div>
+      <div class="col">Service Code</div>
+      <div class="col"></div>
+    </div>
+    <div class="row" ng-repeat="data in ctrl.data">
+      <div class="col">{{feeder.feeder.commonName}}</div>
+      <div class="col">{{feeder.createdDate | date}}</div>
+      <div class="col"><button class="button" ng-click="ctrl.add($index)">Add</button></div>
+    </div>
+  </div>
+<!--  <ion-refresher slot="fixed" (ionRefresh)="getRouteData()">-->
+<!--    <ion-refresher-content></ion-refresher-content>-->
+<!--  </ion-refresher>-->
+
+<!--  <div>-->
+<!--    <div class="root-container">-->
+<!--      <ion-virtual-scroll [items]="feeders" approxItemHeight="10px">-->
+<!--        <ion-item-sliding *virtualItem="let feeder" #item class="list-item">-->
+<!--          <ion-item >-->
+<!--            <div>-->
+<!--              <ion-label>{{feeder.feeder.commonName}}</ion-label>-->
+<!--              <ion-label><strong>Date Fed:</strong> {{feeder.createdDate | date}}</ion-label>-->
+<!--            </div>-->
+<!--          </ion-item>-->
+
+<!--          <ion-item-options side="end">-->
+<!--            <ion-item-option color="danger">-->
+<!--              <ion-icon slot="icon-only" name="trash" (click)="deleteHerpFeeders(feeder.id)"></ion-icon>-->
+<!--            </ion-item-option>-->
+<!--            <ion-item-option>-->
+<!--              <ion-icon slot="icon-only" name="document-text-outline" (click)="presentFeederDetailsModal(feeder)"></ion-icon>-->
+<!--            </ion-item-option>-->
+<!--          </ion-item-options>-->
+<!--        </ion-item-sliding>-->
+<!--      </ion-virtual-scroll>-->
+<!--    </div>-->
+<!--  </div>-->
+</ion-content>

@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Length Details</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismissModal()">Close</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-item class="ion-activated">
+      <ion-label>Length: </ion-label>
+      <ion-item>{{length.length}}</ion-item>
+    </ion-item>
+
+    <ion-item class="ion-activated">
+      <ion-label>Date: </ion-label>
+      <ion-item>{{length.date | date}}</ion-item>
+    </ion-item>
+  </ion-card>
+
+</ion-content>
