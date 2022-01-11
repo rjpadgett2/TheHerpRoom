@@ -35,6 +35,11 @@ public class User implements Serializable {
     @Size(max = 120)
     private String password;
 
+
+
+    @Size(max = 30)
+    private String resetPasswordToken;
+
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(	name = "user_roles",
             joinColumns = @JoinColumn(name = "user_id"),
@@ -99,6 +104,14 @@ public class User implements Serializable {
 
     public void setUserHerps(Set<UserHerps> userHerps) {
         this.userHerps = userHerps;
+    }
+
+    public String getResetPasswordToken() {
+        return resetPasswordToken;
+    }
+
+    public void setResetPasswordToken(String resetPasswordToken) {
+        this.resetPasswordToken = resetPasswordToken;
     }
 
 }

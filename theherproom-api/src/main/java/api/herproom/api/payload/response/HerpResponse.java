@@ -1,7 +1,6 @@
 package api.herproom.api.payload.response;
 
 import api.herproom.api.models.Herp;
-import org.codehaus.jackson.annotate.JsonProperty;
 import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.FieldType;
@@ -10,7 +9,7 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
 
-@Document(indexName="name", type="herp")
+@Document(indexName="name")
 public class HerpResponse implements Serializable {
 
     private static final long serialVersionUID = 1L;
