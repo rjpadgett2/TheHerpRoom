@@ -1,10 +1,11 @@
 import { Injectable } from "@angular/core";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
 import {BehaviorSubject, Observable} from "rxjs";
 import { map } from "rxjs/operators";
 import { User } from "../../shared/models/user.model";
 import * as moment from 'moment';
 const API_URL = "http://localhost:9090/api/auth/";
+
 
 
 @Injectable({
@@ -44,6 +45,13 @@ export class AuthService {
 
     register(user: User): Observable<any> {
         return this.http.post(API_URL + "signup", JSON.stringify(user),
+            {headers: {"Content-type": "application/json; charset=UTF-8"}});
+    }
+
+    resetPassword(email: string): Observable<any> {
+        const params = new HttpParams()
+            .set('email', email);
+        return this.http.post("http://localhost:9090/api/reset/forgot",    JSON.stringify(email),
             {headers: {"Content-type": "application/json; charset=UTF-8"}});
     }
 

@@ -11,32 +11,43 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4dd9830a-b4c5-44c7-8afe-2a03f76f0913" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../theherproom-api/src/main/java/api/herproom/api/payload/request/HerpFeederRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../theherproom-api/src/main/java/api/herproom/api/payload/response/HerpFeedersResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../theherproom-api/src/main/java/api/herproom/api/repository/FeedersRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../theherproom-api/src/main/java/api/herproom/api/repository/HerpFeedersRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../theherproom-api/src/main/java/api/herproom/api/repository/LengthRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../theherproom-api/src/main/java/api/herproom/api/repository/WeightRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../theherproom-api/.idea/jpa-buddy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../theherproom-api/.idea/libraries/Maven__com_sun_mail_jakarta_mail_1_6_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../theherproom-api/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_2_6_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../theherproom-api/.idea/libraries/Maven__org_springframework_spring_context_support_5_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../theherproom-api/src/main/java/api/herproom/api/Utility/Utility.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../theherproom-api/src/main/java/api/herproom/api/controllers/ForgotPasswordController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../theherproom-api/src/main/java/api/herproom/api/repository/EmailRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../theherproom-api/src/main/java/api/herproom/api/security/services/EmailServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../theherproom-api/.idea/libraries/Maven__org_codehaus_jackson_jackson_core_asl_1_9_13.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../theherproom-api/.idea/libraries/Maven__org_codehaus_jackson_jackson_mapper_asl_1_9_13.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../theherproom-api/.idea/libraries/Maven__org_postgresql_postgresql_42_2_18.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../theherproom-api/.idea/libraries/Maven__org_postgresql_postgresql_42_3_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../theherproom-api/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_4_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../theherproom-api/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_6_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../theherproom-api/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_security_2_4_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../theherproom-api/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_security_2_6_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../theherproom-api/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_2_4_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../theherproom-api/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_mail_2_4_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../theherproom-api/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_4_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../theherproom-api/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_6_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../theherproom-api/.idea/libraries/Maven__org_springframework_data_spring_data_elasticsearch_4_0_0_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../theherproom-api/.idea/libraries/Maven__org_springframework_data_spring_data_elasticsearch_4_3_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../theherproom-api/.idea/libraries/Maven__org_springframework_security_oauth_spring_security_oauth2_2_3_5_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../theherproom-api/.idea/libraries/Maven__org_springframework_security_oauth_spring_security_oauth2_2_5_1_RELEASE.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../theherproom-api/out/artifacts/api_jar/api.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../theherproom-api/out/artifacts/api_jar/api.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../theherproom-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../theherproom-api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../theherproom-api/src/main/java/api/herproom/api/controllers/HerpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../theherproom-api/src/main/java/api/herproom/api/controllers/HerpController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../theherproom-api/src/main/java/api/herproom/api/controllers/UserHerpsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../theherproom-api/src/main/java/api/herproom/api/controllers/UserHerpsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../theherproom-api/src/main/java/api/herproom/api/models/Feeders.java" beforeDir="false" afterPath="$PROJECT_DIR$/../theherproom-api/src/main/java/api/herproom/api/models/Feeders.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../theherproom-api/src/main/java/api/herproom/api/models/Herp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../theherproom-api/src/main/java/api/herproom/api/models/Herp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../theherproom-api/src/main/java/api/herproom/api/models/HerpFeeders.java" beforeDir="false" afterPath="$PROJECT_DIR$/../theherproom-api/src/main/java/api/herproom/api/models/HerpFeeders.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../theherproom-api/src/main/java/api/herproom/api/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../theherproom-api/src/main/java/api/herproom/api/models/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../theherproom-api/src/main/java/api/herproom/api/payload/response/HerpResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../theherproom-api/src/main/java/api/herproom/api/payload/response/HerpResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../theherproom-api/src/main/java/api/herproom/api/repository/HerpRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../theherproom-api/src/main/java/api/herproom/api/repository/HerpRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../theherproom-api/src/main/java/api/herproom/api/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../theherproom-api/src/main/java/api/herproom/api/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../theherproom-api/src/main/java/api/herproom/api/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../theherproom-api/src/main/java/api/herproom/api/security/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../theherproom-api/src/main/java/api/herproom/api/security/services/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../theherproom-api/src/main/java/api/herproom/api/security/services/UserDetailsServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../theherproom-api/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../theherproom-api/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../theherproom-api/target/classes/api/herproom/api/controllers/HerpController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../theherproom-api/target/classes/api/herproom/api/controllers/HerpController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../theherproom-api/target/classes/META-INF/theherproom.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../theherproom-api/target/classes/api/herproom/api/controllers/UserHerpsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../theherproom-api/target/classes/api/herproom/api/controllers/UserHerpsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../theherproom-api/target/classes/api/herproom/api/models/Feeders.class" beforeDir="false" afterPath="$PROJECT_DIR$/../theherproom-api/target/classes/api/herproom/api/models/Feeders.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../theherproom-api/target/classes/api/herproom/api/models/Herp.class" beforeDir="false" afterPath="$PROJECT_DIR$/../theherproom-api/target/classes/api/herproom/api/models/Herp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../theherproom-api/target/classes/api/herproom/api/models/HerpFeeders.class" beforeDir="false" afterPath="$PROJECT_DIR$/../theherproom-api/target/classes/api/herproom/api/models/HerpFeeders.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../theherproom-api/target/classes/api/herproom/api/models/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/../theherproom-api/target/classes/api/herproom/api/models/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../theherproom-api/target/classes/api/herproom/api/payload/response/HerpResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/../theherproom-api/target/classes/api/herproom/api/payload/response/HerpResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../theherproom-api/target/classes/api/herproom/api/repository/HerpRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../theherproom-api/target/classes/api/herproom/api/repository/HerpRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../theherproom-api/target/classes/api/herproom/api/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../theherproom-api/target/classes/api/herproom/api/repository/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../theherproom-api/target/classes/api/herproom/api/security/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/../theherproom-api/target/classes/api/herproom/api/security/WebSecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../theherproom-api/target/classes/api/herproom/api/security/services/UserDetailsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../theherproom-api/target/classes/api/herproom/api/security/services/UserDetailsServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../theherproom-api/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../theherproom-api/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../theherproom-api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../theherproom-api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../theherproom-api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../theherproom-api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../theherproom-api/target/theherproom-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../theherproom-api/target/theherproom-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../theherproom-api/target/theherproom-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/../theherproom-api/target/theherproom-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../theherproom-api/theherproom.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../theherproom-api/theherproom.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,6 +57,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="1lZJxwENgy6NY5rgfOkyA51OieP" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -61,24 +75,25 @@
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.last.introduce.type" value="LET" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/assets/icon" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs.protractor.protractor_package" value="$PROJECT_DIR$/node_modules/protractor" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/assets/icon" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/assets" />
       <recent name="$PROJECT_DIR$/src/app/pages/herps/herp-details/feeders" />
       <recent name="$PROJECT_DIR$/src/app/pages/herps/herp-details" />
       <recent name="$PROJECT_DIR$/src/app/pages/feeders" />
       <recent name="$PROJECT_DIR$/src/app/pages/landing" />
-      <recent name="$PROJECT_DIR$/src/app/pages/herps" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/assets/icon" />
     </key>
   </component>
   <component name="RunManager" selected="npm.Angular CLI Server">
@@ -113,6 +128,7 @@
       <method v="2" />
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -137,11 +153,13 @@
       <workItem from="1623629238608" duration="12989000" />
       <workItem from="1625343878435" duration="9838000" />
       <workItem from="1636319919811" duration="20000" />
+      <workItem from="1640689077393" duration="3982000" />
+      <workItem from="1641257345318" duration="5617000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -159,7 +177,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="609" y="-846" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1621106314224">

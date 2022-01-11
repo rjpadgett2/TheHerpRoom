@@ -177,15 +177,11 @@ export class AddHerpsPage implements OnInit {
         length = length * mConst;
         break;
     }
-
-    this.herpForm.setValue({
-      length: length
-    })
+    this.herpForm.controls['length'].setValue(length);
 
   }
 
   async submitForm() {
-    console.log(this.herpForm);
     this.isSubmitted = true;
     if (!this.herpForm.valid) {
       const toast = await this.toastController.create({
@@ -198,9 +194,12 @@ export class AddHerpsPage implements OnInit {
       await toast.present();
       return false;
     } else {
+
       this.presentLoading();
-      this.convertMetrics()
+      this.convertMetrics();
       let newHerp: HerpFormModel = this.herpForm.value;
+      console.log(newHerp);
+      console.log("this");
       this.herpsService.postUserHerp(newHerp).subscribe(async data => {
           this.dismiss();
           console.log("success: " + JSON.stringify(data))
@@ -208,6 +207,7 @@ export class AddHerpsPage implements OnInit {
         const modal = await this.modalController.getTop();
         modal.dismiss();
         },err => {
+        console.log(err);
           this.dismiss();
         });
     }

@@ -55,6 +55,10 @@ const routes: Routes = [
     path: 'feeders',
     loadChildren: () => import('./pages/herps/herp-details/feeders/feeders.module').then(m => m.FeedersPageModule)
   },
+  {
+    path: 'password-reset',
+    loadChildren: () => import('./pages/password-reset/password-reset.module').then( m => m.PasswordResetPageModule)
+  },
 ];
 
 @NgModule({

@@ -23,7 +23,7 @@
 <!--  </ion-grid>-->
   <ion-content class="login" padding>
 
-    <img class="logo" src="../../../assets/icon/firebase-logo.png">
+    <img class="logo" src="../../../assets/logos/logos_transparent.png">
     <form [formGroup]="loginForm" (ngSubmit)="login()">
       <ion-list>
         <ion-item>
@@ -37,15 +37,18 @@
         </ion-item>
       </ion-list>
 
-      <ion-row class="btn-block">
-        <ion-col col-6>
-          <p class="reg" (click)="registration();">REGISTER HERE</p>
-        </ion-col>
-        <ion-col col-6>
-          <button ion-button full type="submit">Login</button>
-        </ion-col>
-      </ion-row>
+
+        <div padding>
+          <ion-button size="large" type="submit" expand="block">Login</ion-button>
+        </div>
+
     </form>
+    <div padding>
+      <ion-button fill="clear" expand="block" color="primary" (click)="passwordReset() ;">Forgot Password</ion-button>
+    </div>
+    <div padding>
+      <ion-button fill="clear" expand="block" color="primary" (click)="registration();">REGISTER HERE</ion-button>
+    </div>
   </ion-content>
 </ion-content>
 
